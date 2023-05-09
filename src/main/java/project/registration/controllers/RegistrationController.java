@@ -79,17 +79,16 @@ public class RegistrationController {
     }
     */
 
-    /*
-    @GetMapping(value = "/registrations/user")
-    public List<registration> getregistrationByUser(@RequestParam(required = false) String user) throws Exception {
+    @GetMapping(value = "/Registrations/user")
+    public List<Registration> getregistrationByUser(@RequestParam(required = false) String user) throws Exception {
 
         log.info("Received request to retrieve registration by user = " + user);
-        List<registration> registrationList = registrationService.getregistrationByUser(user);
+        List<Registration> registrationList = registrationService.getRegistrationByUser(user);
 
         return registrationList;
     }
     
-
+    /*
     @GetMapping(value = "/registrations/search")
     public List<registration> searchregistration(@RequestParam(required = false) String keyword) throws Exception {
 

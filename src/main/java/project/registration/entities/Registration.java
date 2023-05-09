@@ -51,6 +51,30 @@ public class Registration {
     private String health_medicationdetails;
     private String health_exercise;
 
+    private String family_illnesss;
+    private String family_illnesssdetails;
+    private String family_carer;
+    private String family_carerdetails;
+
+    private String profiling_englishspoken;
+    private String profiling_englishwritten;
+    private String profiling_englishfirst;
+    private String profiling_religion;
+    private String profiling_ethnicgroup;
+
+    private String gp_borough;
+    private String gp_primary;
+    private String gp_secondary;
+
+    private String consent_resident;
+    private String consent_eea;
+    private String consent_prc;
+    private String consent_sms;
+    private String consent_email;
+
+    private String user;
+    private String status;
+
     @CreatedDate
     @Column(updatable = false)
     public LocalDateTime createdDate;

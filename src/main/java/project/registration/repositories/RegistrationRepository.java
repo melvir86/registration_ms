@@ -12,6 +12,8 @@ public interface RegistrationRepository extends MongoRepository<Registration, St
 
     List<Registration> findBy_id(ObjectId _id);
 
+    List<Registration> findByUser(String user);
+
     //findByStatusCodeNot(String statusCode);
     //findFirstOrderByCounter
     //List<Person> findByNameAndNickname(String name, String nickname);

@@ -76,6 +76,13 @@ public class RegistrationService {
         return existRegistration;
     }
  
+    //Retrieve Registration by User
+    public List<Registration> getRegistrationByUser(String user) {
+    
+        List<Registration> registrationList = RegistrationRepository.findByUser(user);
+        return registrationList;
+    }
+
     //Delete a Registration
      public void deleteRegistration(String id) {
  
@@ -88,5 +95,5 @@ public class RegistrationService {
         List<Registration> Registration = RegistrationRepository.findBy_id(id);
         return Registration;
     }
-    
+
 }
