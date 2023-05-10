@@ -34,6 +34,13 @@ public class RegistrationController {
         return registrationService.getAllRegistrations();
     }
 
+    @GetMapping(value = "/Registrations/{id}")
+    public List<Registration> getFeedbackBy_Id(@PathVariable ObjectId id) throws Exception {
+
+        List<Registration> registrationList = registrationService.getRegistrationByObjectId(id);
+
+        return registrationList;
+    }
      
     @PostMapping("/Registrations")
     public ResponseEntity<Registration> saveregistration(@RequestBody Registration registration) {
@@ -55,18 +62,16 @@ public class RegistrationController {
         }
     }
 
-    /* 
-    @DeleteMapping("/registrations/{id}")
-    public ResponseEntity<String> deleteregistration(@PathVariable String id) {
+    @DeleteMapping("/Registrations/{id}")
+    public ResponseEntity<Registration> deleteRegistration(@PathVariable String id) {
         try {
-            registrationService.deleteregistration(id);
-            return new ResponseEntity<String>("You have successfully deleted a registration with an id of: " + id, HttpStatus.OK);
+            registrationService.deleteRegistration(id);
+            return new ResponseEntity<Registration>(HttpStatus.OK);
+            //return new ResponseEntity<String>("You have successfully deleted a registration with an id of: " + id, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
         }
     }
-    */
 
     /* 
     @GetMapping(value = "/registrations/{admin}")

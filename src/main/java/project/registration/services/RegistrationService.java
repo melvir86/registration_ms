@@ -71,6 +71,27 @@ public class RegistrationService {
         existRegistration.setHealth_medicationdetails(Registration.getHealth_medicationdetails());
         existRegistration.setHealth_exercise(Registration.getHealth_exercise());
 
+        existRegistration.setFamily_illnesss(Registration.getFamily_illnesss());
+        existRegistration.setFamily_illnesssdetails(Registration.getFamily_illnesssdetails());
+        existRegistration.setFamily_carer(Registration.getFamily_carer());
+        existRegistration.setFamily_carerdetails(Registration.getFamily_carerdetails());
+
+        existRegistration.setProfiling_englishspoken(Registration.getProfiling_englishspoken());
+        existRegistration.setProfiling_englishwritten(Registration.getProfiling_englishwritten());
+        existRegistration.setProfiling_englishfirst(Registration.getProfiling_englishfirst());
+        existRegistration.setProfiling_religion(Registration.getProfiling_religion());
+        existRegistration.setProfiling_ethnicgroup(Registration.getProfiling_ethnicgroup());
+
+        existRegistration.setGp_borough(Registration.getGp_borough());
+        existRegistration.setGp_primary(Registration.getGp_primary());
+        existRegistration.setGp_secondary(Registration.getGp_secondary());
+
+        existRegistration.setConsent_resident(Registration.getConsent_resident());
+        existRegistration.setConsent_eea(Registration.getConsent_eea());
+        existRegistration.setConsent_prc(Registration.getConsent_prc());
+        existRegistration.setConsent_sms(Registration.getConsent_sms());
+        existRegistration.setConsent_email(Registration.getConsent_email());
+
         existRegistration.setLastModifiedDate(Registration.getLastModifiedDate());
         RegistrationRepository.save(existRegistration);
         return existRegistration;
@@ -80,6 +101,13 @@ public class RegistrationService {
     public List<Registration> getRegistrationByUser(String user) {
     
         List<Registration> registrationList = RegistrationRepository.findByUser(user);
+        return registrationList;
+    }
+
+    //Retrieve Registration by Id
+    public List<Registration> getFeedbackByObjectId(ObjectId id) {
+
+        List<Registration> registrationList = RegistrationRepository.findBy_id(id);
         return registrationList;
     }
 
