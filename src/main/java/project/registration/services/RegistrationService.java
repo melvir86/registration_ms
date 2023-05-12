@@ -92,6 +92,9 @@ public class RegistrationService {
         existRegistration.setConsent_sms(Registration.getConsent_sms());
         existRegistration.setConsent_email(Registration.getConsent_email());
 
+        existRegistration.setStatus(Registration.getStatus());
+        existRegistration.setGp_comments(Registration.getGp_comments());
+
         existRegistration.setLastModifiedDate(Registration.getLastModifiedDate());
         RegistrationRepository.save(existRegistration);
         return existRegistration;

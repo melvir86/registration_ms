@@ -74,6 +74,7 @@ public class Registration {
 
     private String user;
     private String status;
+    private String gp_comments;
 
     @CreatedDate
     @Column(updatable = false)
