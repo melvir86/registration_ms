@@ -13,6 +13,8 @@ public interface AppointmentRepository extends MongoRepository<Appointment, Stri
 
     List<Appointment> findByUser(String user);
 
+    List<Appointment> findByGp(String gp);
+    
     //findByStatusCodeNot(String statusCode);
     //findFirstOrderByCounter
     //List<Person> findByNameAndNickname(String name, String nickname);

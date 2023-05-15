@@ -92,6 +92,15 @@ public class AppointmentController {
 
         return AppointmentList;
     }
+
+    @GetMapping(value = "/Appointments/gp")
+    public List<Appointment> getAppointmentByGP(@RequestParam(required = false) String gp) throws Exception {
+
+        log.info("Received request to retrieve Appointment by GP = " + gp);
+        List<Appointment> AppointmentList = appointmentService.getAppointmentByGP(gp);
+
+        return AppointmentList;
+    }
     
     /*
     @GetMapping(value = "/Appointments/search")

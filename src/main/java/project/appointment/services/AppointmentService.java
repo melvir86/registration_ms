@@ -41,8 +41,9 @@ public class AppointmentService {
 
     //Updares an existing Appointment
     public Appointment updateAppointment(String id, Appointment Appointment) {
-
+        
         Appointment existAppointment = getAppointment(id);
+        existAppointment.setGp(Appointment.getGp());
         existAppointment.setAppointment_type(Appointment.getAppointment_type());
         existAppointment.setAppointment_symptom(Appointment.getAppointment_symptom());
         existAppointment.setAppointment_cause(Appointment.getAppointment_cause());
@@ -51,6 +52,7 @@ public class AppointmentService {
         existAppointment.setAppointment_symptomstatus(Appointment.getAppointment_symptomstatus());
         existAppointment.setAppointment_improvement(Appointment.getAppointment_improvement());
         existAppointment.setAppointment_doctor(Appointment.getAppointment_doctor());
+        existAppointment.setAppointment_datetime(Appointment.getAppointment_datetime());
 
         existAppointment.setConsent_contact(Appointment.getConsent_contact());
         existAppointment.setConsent_sms(Appointment.getConsent_sms());
@@ -68,6 +70,13 @@ public class AppointmentService {
     public List<Appointment> getAppointmentByUser(String user) {
     
         List<Appointment> AppointmentList = AppointmentRepository.findByUser(user);
+        return AppointmentList;
+    }
+
+    //Retrieve Appointment by GP
+    public List<Appointment> getAppointmentByGP(String gp) {
+    
+        List<Appointment> AppointmentList = AppointmentRepository.findByGp(gp);
         return AppointmentList;
     }
 

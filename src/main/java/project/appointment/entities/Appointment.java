@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -24,6 +25,9 @@ public class Appointment {
     @Id
     private ObjectId _id;
 
+    @Field(name = "appointment_gp")
+    private String gp;
+
     private String appointment_type;
     private String appointment_symptom;
     private String appointment_cause;
@@ -32,6 +36,7 @@ public class Appointment {
     private String appointment_symptomstatus;
     private String appointment_improvement;
     private String appointment_doctor;
+    private String appointment_datetime;
 
     private String consent_contact;
     private String consent_sms;
