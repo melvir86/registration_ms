@@ -1,18 +1,18 @@
-package project.registration.repositories;
+package project.appointment.repositories;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import project.registration.entities.Registration;
+import project.appointment.entities.Appointment;
 
 import java.util.List;
 
-public interface RegistrationRepository extends MongoRepository<Registration, String> {
+public interface AppointmentRepository extends MongoRepository<Appointment, String> {
 
-    List<Registration> findBy_id(ObjectId _id);
+    List<Appointment> findBy_id(ObjectId _id);
 
-    List<Registration> findByUser(String user);
+    List<Appointment> findByUser(String user);
 
     //findByStatusCodeNot(String statusCode);
     //findFirstOrderByCounter
