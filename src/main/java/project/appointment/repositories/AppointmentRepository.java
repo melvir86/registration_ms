@@ -2,7 +2,6 @@ package project.appointment.repositories;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
 
 import project.appointment.entities.Appointment;
 
