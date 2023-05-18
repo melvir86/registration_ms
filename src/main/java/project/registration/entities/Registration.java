@@ -35,6 +35,7 @@ public class Registration {
     private String basic_address;
     private String basic_postcode;
     private String basic_email;
+    private String basic_hobbies;
 
     private String health_suffered;
     private String health_suffereddetails;

@@ -14,6 +14,9 @@ public interface RegistrationRepository extends MongoRepository<Registration, St
 
     List<Registration> findByUser(String user);
 
+    List<Registration> findFirstByUserAndStatusOrderByLastModifiedDate(String user, String status);
+
+    //List<GP> findFirstByBoroughAndNameNotLikeOrderByCurrentcapacity(String borough, String primaryGP);
     //findByStatusCodeNot(String statusCode);
     //findFirstOrderByCounter
     //List<Person> findByNameAndNickname(String name, String nickname);

@@ -107,6 +107,13 @@ public class RegistrationService {
         return registrationList;
     }
 
+    //Retrieve Registration by Status
+    public List<Registration> getRegistrationByUserAndStatus(String user, String status) {
+    
+        List<Registration> registrationList = RegistrationRepository.findFirstByUserAndStatusOrderByLastModifiedDate(user, status);
+        return registrationList;
+    }
+
     //Retrieve Registration by Id
     public List<Registration> getFeedbackByObjectId(ObjectId id) {
 

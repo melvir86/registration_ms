@@ -92,6 +92,15 @@ public class RegistrationController {
 
         return registrationList;
     }
+
+    @GetMapping(value = "/Registrations/registered/user")
+    public List<Registration> getregistrationByUserAndStatus(@RequestParam(required = false) String user) throws Exception {
+
+        log.info("Received request to retrieve registration by user and status = " + user);
+        List<Registration> registrationList = registrationService.getRegistrationByUserAndStatus(user, "Registered");
+
+        return registrationList;
+    }
     
     /*
     @GetMapping(value = "/registrations/search")
