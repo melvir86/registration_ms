@@ -35,7 +35,7 @@ public class RegistrationController {
     }
 
     @GetMapping(value = "/Registrations/{id}")
-    public List<Registration> getFeedbackBy_Id(@PathVariable ObjectId id) throws Exception {
+    public List<Registration> getRegistrationBy_Id(@PathVariable ObjectId id) throws Exception {
 
         List<Registration> registrationList = registrationService.getRegistrationByObjectId(id);
 
@@ -98,6 +98,15 @@ public class RegistrationController {
 
         log.info("Received request to retrieve registration by user and status = " + user);
         List<Registration> registrationList = registrationService.getRegistrationByUserAndStatus(user, "Registered");
+
+        return registrationList;
+    }
+
+    @GetMapping(value = "/Registrations/gp_primary")
+    public List<Registration> getregistrationByGpPrimary(@RequestParam(required = false) String gp_primary) throws Exception {
+
+        log.info("Received request to retrieve registration by gpprimary = " + gp_primary);
+        List<Registration> registrationList = registrationService.getRegistrationByPrimaryGP(gp_primary);
 
         return registrationList;
     }

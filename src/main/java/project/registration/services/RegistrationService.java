@@ -121,6 +121,13 @@ public class RegistrationService {
         return registrationList;
     }
 
+    //Retrieve Registration by Primary GP
+    public List<Registration> getRegistrationByPrimaryGP(String gp_primary) {
+
+        List<Registration> registrationList = RegistrationRepository.findByGpprimary(gp_primary);
+        return registrationList;
+    }
+
     //Delete a Registration
      public void deleteRegistration(String id) {
  

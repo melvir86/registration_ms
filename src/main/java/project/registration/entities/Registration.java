@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -35,7 +36,6 @@ public class Registration {
     private String basic_address;
     private String basic_postcode;
     private String basic_email;
-    private String basic_hobbies;
 
     private String health_suffered;
     private String health_suffereddetails;
@@ -64,7 +64,8 @@ public class Registration {
     private String profiling_ethnicgroup;
 
     private String gp_borough;
-    private String gp_primary;
+    @Field(name = "gp_primary")
+    private String gpprimary;
     private String gp_secondary;
 
     private String consent_resident;
