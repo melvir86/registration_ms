@@ -83,7 +83,7 @@ public class RegistrationService {
         existRegistration.setProfiling_ethnicgroup(Registration.getProfiling_ethnicgroup());
 
         existRegistration.setGp_borough(Registration.getGp_borough());
-        existRegistration.setGp_primary(Registration.getGp_primary());
+        existRegistration.setGpprimary(Registration.getGpprimary());
         existRegistration.setGp_secondary(Registration.getGp_secondary());
 
         existRegistration.setConsent_resident(Registration.getConsent_resident());
