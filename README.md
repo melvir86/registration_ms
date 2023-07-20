@@ -13,3 +13,4 @@ This is a shared code repository for the Registration Backend Microservice of Me
 6. Type 'mvn spring-boot:run' to start the application
 7. Backend is now running successfully
 8. To test, either access via a software such as Postman or directly from the frontend application on browser (assuming it is already running)
+9. Recommend to test RESTful endpoint via GET (http://localhost:8082/api/v1/Registrations) to see if JSON result is returned with status code 200
